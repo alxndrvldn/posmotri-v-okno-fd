@@ -119,6 +119,7 @@ ol {
 
 .content__card-link {
   text-decoration: none;
+  display: block;
 }
 
 .content__video-card-title {
@@ -155,15 +156,15 @@ ol {
 }
 
 .result__video {
-  width: 100%;
+  width: 100%; /* пытался сделать через object-fit и object-position, но не могу понять как размер задать, намнмого меньше размер медиа*/
   height: 100%;
 }
 
 .search-form {
   display: flex;
   justify-content: space-between;
-  height: 54px;
   gap: 40px;
+  padding-bottom: 3px;
 }
 
 .search-form__checkbox-list {
@@ -187,6 +188,7 @@ ol {
 }
 
 .search-form__textfield {
+  font-family: "Fira Sans Condensed", sans-serif;
   background-color: inherit;
   font-size: 18px;
   font-weight: 400;
@@ -194,15 +196,15 @@ ol {
   border-top: 1px solid rgba(255, 255, 255, 1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   border-right: 0px;
-  letter-spacing: -1px;
   appearance: none;
+  width: 225px;
 }
 
 .search-form__textfield:focus {
   outline: none;
 }
 
-.search-form__label:has(.search-form__textfield:focus-visible) {
+.search-form__label:has(:focus-visible) {
   outline: 1px solid rgba(255, 255, 255);
 }
 
@@ -222,36 +224,32 @@ ol {
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
   content: "";
   position: absolute;
-  inset: 2px;
+  inset: 1px;
   background-color: #fff;
 }
 
-.search-form__label:has(.search-form__checkbox:focus-visible) {
-  outline: 1px solid rgba(255, 255, 255);
-}
-
-.search-form__checkbox-list:has(.search-form__label:hover) {
+.search-form__label:hover .search-form__label-text {
   text-decoration: underline;
 }
 
 .button {
+  font-family: "Fira Sans Condensed", sans-serif;
   background-color: transparent;
   font-size: 18px;
   font-weight: 700;
   color: #ffffff;
   border: 1px solid #ffffff;
   cursor: pointer;
+  height: 34px;
 }
 
 .search-form__submit-button {
   width: 194px;
-  height: 34px;
   margin-top: 17px;
 }
 
 .more-button {
   width: 100%;
-  height: 34px;
   margin-top: 36px;
 }
 
@@ -271,20 +269,20 @@ ol {
   outline: 1px solid rgba(255, 255, 255);
 }
 
-.content__card-link_current:active {
+.content__card-link_current {
   background-color: rgba(84, 80, 80);
 }
 
-.content__card-link_current:hover {
+.content__card-link:hover {
   text-decoration: underline;
   text-decoration-color: rgba(255, 255, 255);
 }
 
-.content__card-link_current:focus {
+.content__card-link:focus {
   outline: none;
 }
 
-.content__card-link_current:focus-visible {
+.content__card-link:focus-visible {
   outline: 1px solid rgba(255, 255, 255);
 }
 
